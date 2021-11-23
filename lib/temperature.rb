@@ -26,14 +26,14 @@ class Temperature
     @temp_value = @temp_value.to_f
   end
 
-  def is_float?(suspect)
+  def float?(suspect)
     Float suspect
     true
   rescue StandardError
     false
   end
 
-  def is_correct?(suspect)
+  def correct?(suspect)
     %w[F K C].include? suspect
   end
 

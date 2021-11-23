@@ -4,43 +4,43 @@ class TemperatureTransfer
   def choose_method
     case @method
     when 'CF'
-      from_C_to_F!
+      from_c_to_f!
     when 'CK'
-      from_C_to_K!
+      from_c_to_k!
     when 'KC'
-      from_K_to_C!
+      from_k_to_c!
     when 'FC'
-      from_F_to_C!
+      from_f_to_c!
     when 'FK'
-      from_F_to_K!
+      from_f_to_k!
     when 'KF'
-      from_K_to_F!
+      from_k_to_f!
     end
   end
 
-  def from_C_to_F!
+  def from_c_to_f!
     @t = (@t * 1.8) + 32
   end
 
-  def from_C_to_K!
+  def from_c_to_k!
     @t += 273.15
   end
 
-  def from_K_to_C!
+  def from_k_to_c!
     @t -= 273.15
   end
 
-  def from_F_to_C!
+  def from_f_to_c!
     @t = (@t - 32) / 1.8
   end
 
-  def from_F_to_K!
-    from_F_to_C!
-    from_C_to_K!
+  def from_f_to_k!
+    from_f_to_c!
+    from_c_to_k!
   end
 
-  def from_K_to_F!
-    from_K_to_C!
-    from_C_to_F!
+  def from_k_to_f!
+    from_k_to_c!
+    from_c_to_f!
   end
 end
