@@ -5,7 +5,7 @@ class Temperature
     loop do
       Terminal.write 'Please enter from which scale do you want to translate (F, K, C)?'
       @from = Terminal.read
-      break if is_correct? @from
+      break if correct? @from
     end
   end
 
@@ -13,7 +13,7 @@ class Temperature
     loop do
       Terminal.write 'Please enter which scale do you want to convert (F, K, C)?'
       @to = Terminal.read
-      break if is_correct?(@to) && @to != @from
+      break if correct?(@to) && @to != @from
     end
   end
 
@@ -21,7 +21,7 @@ class Temperature
     Terminal.write 'Enter the temperature'
     loop do
       @temp_value = Terminal.read
-      break if is_float? @temp_value
+      break if float? @temp_value
     end
     @temp_value = @temp_value.to_f
   end

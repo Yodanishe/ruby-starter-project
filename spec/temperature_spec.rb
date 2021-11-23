@@ -30,24 +30,24 @@ RSpec.describe Temperature do
 
   describe '#correct_scale?' do
     context 'Correct scale (C)' do
-      subject { Temperature.new.is_correct?('C') }
+      subject { Temperature.new.correct?('C') }
       it { is_expected.to eq true }
     end
 
     context 'Incorrect scale (D)' do
-      subject { Temperature.new.is_correct?('D') }
+      subject { Temperature.new.correct?('D') }
       it { is_expected.to eq false }
     end
   end
 
   describe '#number?' do
     context 'Correct value (30)' do
-      subject { Temperature.new.is_float?('30') }
+      subject { Temperature.new.float?('30') }
       it { is_expected.to eq true }
     end
 
     context 'Incorrect value (30o5)' do
-      subject { Temperature.new.is_float?('30o5') }
+      subject { Temperature.new.float?('30o5') }
       it { is_expected.to eq false }
     end
   end
