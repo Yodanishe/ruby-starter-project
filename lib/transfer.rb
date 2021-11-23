@@ -1,5 +1,22 @@
 class TemperatureTransfer
-  attr_accessor :t
+  attr_accessor :t, :method
+
+  def choose_method
+    case @method
+    when 'CF'
+      from_C_to_F!
+    when 'CK'
+      from_C_to_K!
+    when 'KC'
+      from_K_to_C!
+    when 'FC'
+      from_F_to_C!
+    when 'FK'
+      from_F_to_K!
+    when 'KF'
+      from_K_to_F!
+    end
+  end
 
   def from_C_to_F!
     @t = (@t * 1.8) + 32
@@ -18,12 +35,12 @@ class TemperatureTransfer
   end
 
   def from_F_to_K!
-    @t = from_F_to_C!
-    @t = from_C_to_K!
+    from_F_to_C!
+    from_C_to_K!
   end
 
   def from_K_to_F!
-    @t = from_K_to_C!
-    @t = from_C_to_F!
+    from_K_to_C!
+    from_C_to_F!
   end
 end

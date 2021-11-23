@@ -1,4 +1,12 @@
 class Terminal
+  def self.write(str)
+    puts str
+  end
+
+  def self.read
+    gets.chomp
+  end
+
   def self.say_hello
     puts 'Hello, user! The temperature converter greets you.'
   end
@@ -7,7 +15,8 @@ class Terminal
     system 'clear'
   end
 
-  def self.print_answer(from, to, t, t2)
-    puts "#{t} #{from} = #{t2.round(2)} #{to}"
+  def self.again?
+    write 'Convert again? (Y)'
+    read == 'Y'
   end
 end
